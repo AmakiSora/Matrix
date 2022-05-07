@@ -11,32 +11,32 @@ cv2.imshow("img", img)
 # 创建核结构
 kernel = numpy.ones((5, 5), numpy.uint8)
 
-# # 腐蚀
-# erosion = cv2.erode(img, kernel)
-# # 膨胀
-# dilate = cv2.dilate(img, kernel)
-#
-# cv2.imshow("erosion", erosion)
-# cv2.imshow("dilate", dilate)
-# cv2.waitKey(0)
-#
-# # 开运算(即先侵蚀后膨胀,消除噪点用)
-# cvOpen = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
-# # 闭运算(即先膨胀后侵蚀,填充孔洞用)
-# cvClose = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
-#
-# cv2.imshow("cvOpen", cvOpen)
-# cv2.imshow("cvClose", cvClose)
-# cv2.waitKey(0)
-#
-# # 礼帽运算(原图像与开运算的结果图之差)
-# tophat = cv2.morphologyEx(img, cv2.MORPH_TOPHAT, kernel)
-# # 黑帽运算(闭运算的结果图与原图像之差)
-# blackhat = cv2.morphologyEx(img, cv2.MORPH_BLACKHAT, kernel)
-#
-# cv2.imshow("tophat", tophat)
-# cv2.imshow("blackhat", blackhat)
-# cv2.waitKey(0)
+# 腐蚀
+erosion = cv2.erode(img, kernel)
+# 膨胀
+dilate = cv2.dilate(img, kernel)
+
+cv2.imshow("erosion", erosion)
+cv2.imshow("dilate", dilate)
+cv2.waitKey(0)
+
+# 开运算(即先侵蚀后膨胀,消除噪点用)
+cvOpen = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
+# 闭运算(即先膨胀后侵蚀,填充孔洞用)
+cvClose = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+
+cv2.imshow("cvOpen", cvOpen)
+cv2.imshow("cvClose", cvClose)
+cv2.waitKey(0)
+
+# 礼帽运算(原图像与开运算的结果图之差)
+tophat = cv2.morphologyEx(img, cv2.MORPH_TOPHAT, kernel)
+# 黑帽运算(闭运算的结果图与原图像之差)
+blackhat = cv2.morphologyEx(img, cv2.MORPH_BLACKHAT, kernel)
+
+cv2.imshow("tophat", tophat)
+cv2.imshow("blackhat", blackhat)
+cv2.waitKey(0)
 
 '''
     均值滤波(用于消除噪声)
